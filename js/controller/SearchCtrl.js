@@ -20,4 +20,44 @@ app.controller('SearchCtrl', ['$scope','$rootScope','NotifyService','SearchServi
 
 		
 	};
+
+	$scope.doWordSubmit = function (site) {
+		SearchService.getWords(site)
+			.success(function (response) {
+
+				$scope.data = response;
+					//console.log(response.content);
+					
+					
+					NotifyService.success('Success');
+				
+			})
+			.error(function(response) {
+	    		console.log(response);
+	    		NotifyService.error('No Link Found.');
+	    	});
+		//console.log(SearchService.getReport(city));
+
+		
+	};
+
+	$scope.doLineSubmit = function (site) {
+		SearchService.getLines(site)
+			.success(function (response) {
+
+				$scope.data = response;
+					//console.log(response.content);
+					
+					
+					NotifyService.success('Success');
+				
+			})
+			.error(function(response) {
+	    		console.log(response);
+	    		NotifyService.error('No Link Found.');
+	    	});
+		//console.log(SearchService.getReport(city));
+
+		
+	};
 }]);

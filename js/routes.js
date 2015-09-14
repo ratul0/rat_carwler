@@ -4,6 +4,14 @@ app.config(['$routeProvider','$httpProvider',function($routeProvider,$httpProvid
 			templateUrl : 'partials/pages/home.html',
 			controller : 'SearchCtrl'
 		})
+		.when('/words',{
+			templateUrl : 'partials/pages/words.html',
+			controller : 'SearchCtrl'
+		})
+		.when('/lines',{
+			templateUrl : 'partials/pages/lines.html',
+			controller : 'SearchCtrl'
+		})
 		.otherwise({
 			redirectTo: '/'
 		});

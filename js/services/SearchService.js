@@ -8,6 +8,18 @@ app.service('SearchService', ['$http','$location', function($http,$location){
 		//return $http.get("http://boilerpipe-web.appspot.com/extract?url="+site.name+"&extractor=ArticleExtractor&output=json&extractImages=");
 		return $http.post('http://localhost:3000/content', site);
 	};
+
+	service.getWords = function (site) {
+		
+		
+		return $http.post('http://localhost:3000/words', site);
+	};
+
+	service.getLines = function (site) {
+		
+		
+		return $http.post('http://localhost:3000/lines', site);
+	};
 	
 
 	return service;

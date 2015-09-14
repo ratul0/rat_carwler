@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-6 col-lg-offset-3 text-center">
-        <form name="SearchForm" ng-submit="doSubmit(site)" class="form-inline" role="form" novalidate>
+        <form name="SearchForm" ng-submit="doWordSubmit(site)" class="form-inline" role="form" novalidate>
             <div class="form-group">
                 <label class="sr-only" for="SearchCity">Search URL</label>
                 <input type="url" class="form-control" id="SearchCity" ng-model="site.name" placeholder="Search URL" autofocus required>
@@ -18,8 +18,15 @@
 <div class="container">
 <div class="row">
     <div ng-show= "data" class="col-lg-12">
-         <p>{{data.content}}</p> 
-        <!-- <p>{{data.wordSet}}</p> -->
+
+        <!-- <ul ng-repeat = "word in data.wordSet">
+            <li>{{word}}</li>
+        </ul> -->
+        <p>{{data.wordSet}}</p>
+
+        <ul ng-repeat = "words in data.wordSet">
+            <li>{{words}}</li>
+        </ul>
 
 
 
